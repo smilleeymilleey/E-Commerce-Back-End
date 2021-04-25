@@ -10,11 +10,21 @@ router.get('/', async (req, res) => {
   } catch (error) {
     res.status(404).json(error)
   }
-  // find all tags
-  // be sure to include its associated Product data
+ 
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
+
+  try {
+    const singleId = await ProductTag.findAll({ where: {
+      tag_id: req.params.id
+    }})
+    console.log("its working")
+    res.status(200).json(singleId)
+  } catch (error) {
+    res.status(404).json(error)
+  }
+
   // find a single tag by its `id`
   // be sure to include its associated Product data
 });
