@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
   try {
     const siteCategories = await Category.findAll()
     console.log("from api/")
-    
      res.status(200).json(siteCategories)
   }catch (error) {
     res.status(404).json(error);
@@ -17,9 +16,20 @@ router.get('/', async (req, res) => {
  
 
 
-router.get('/:id', (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
+router.get('/:id', async (req, res) => {
+try {
+  let id = req.params.id
+   const categoryPK = await Product.findAll({
+     where: {
+      category_id: id
+   }
+  });
+  console.log("from category/:id")
+    res.status(200).json(categoryPK)
+}catch (error) {
+  res.status(404).json(error)
+}
+ 
 });
 
 router.post('/', (req, res) => {
