@@ -1,4 +1,4 @@
-# E-Commerce Back Eng-
+# E-Commerce Back End-
 This is a project routes all of your product information to mySql Database!
 
 <!--
