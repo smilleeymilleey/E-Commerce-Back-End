@@ -31,15 +31,10 @@ This is a project routes all of your product information to mySql Database!
   <p align="center">
    E-Commerce Back End
     <br />
-  -->
-    <br />
-    <br />
-  
-    
+ </p>
     <a href="https://github.com/smilleeymilleey">Report Bug</a>
-    ·
     <a href="https://github.com/smilleeymilleey">Request Feature</a>
-  </p>
+ 
 </p>
 
 
